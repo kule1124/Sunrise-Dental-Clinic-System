@@ -69,3 +69,5 @@ frontend/     Browser UI and static assets
 docs/         Version-control, CI/CD, deployment, and screenshot evidence
 .github/      GitHub Actions workflow and modernization artifacts
 ```
+
+Version 2 - Project documentation updated
