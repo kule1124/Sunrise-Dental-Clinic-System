@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "producer": "Java AppCAT CLI",
+  "metadata": {
+    "analysisStartTime": "2026-09-01T05:10:48.485Z",
+    "analysisEndTime": "1970-01-01T00:00:00.000Z",
+    "privacyMode": "Protected",
+    "privacyModeHelpUrl": "https://aka.ms/appmod-privacy-mode",
+    "targetIds": [
+      "azure-aks",
+      "azure-appservice",
+      "azure-container-apps"
+    ],
+    "targetDisplayNames": [
+      "Azure Kubernetes Service",
+      "Azure App Service",
+      "Azure Container Apps"
+    ],
+    "capabilities": [
+      "openjdk25"
+    ],
+    "os": [
+      "windows",
+      "linux"
+    ],
+    "id": "20260901104048",
+    "name": "Report_20260901104048",
+    "status": "running",
+    "domains": [
+      "security"
+    ],
+    "mode": "issue-only",
+    "minimumCveSeverity": "high",
+    "cveScanScope": "direct"
+  },
+  "summary": {
+    "totalProjects": 1,
+    "totalIssues": 0,
+    "totalIncidents": 0,
+    "totalEffort": 0,
+    "charts": {
+      "severity": {
+        "mandatory": 0,
+        "optional": 0,
+        "potential": 0,
+        "information": 0
+      },
+      "category": {}
+    }
+  },
+  "projects": [
+    {
+      "path": ".",
+      "issues": 0,
+      "storyPoints": 0,
+      "properties": {
+        "appName": "Sunrise-Dental-Clinic-System",
+        "jdkVersion": "17",
+        "frameworks": [
+          "Spring Boot",
+          "Spring"
+        ],
+        "languages": [
+          "Java",
+          "JavaScript"
+        ],
+        "tools": [
+          "Maven"
+        ]
+      },
+      "incidents": []
+    }
+  ],
+  "rules": {},
+  "security": []
+}

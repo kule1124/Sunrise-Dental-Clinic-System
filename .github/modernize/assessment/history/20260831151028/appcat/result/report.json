@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "producer": "Java AppCAT CLI",
+  "metadata": {
+    "analysisStartTime": "2026-08-31T09:40:28.5999451Z",
+    "analysisEndTime": "2026-08-31T09:40:28.9861589Z",
+    "status": "Complete",
+    "privacyMode": "Protected",
+    "privacyModeHelpUrl": "https://aka.ms/appcat-privacy-mode",
+    "targetIds": [],
+    "targetDisplayNames": null,
+    "capabilities": [],
+    "os": [
+      "windows"
+    ]
+  },
+  "summary": {
+    "totalProjects": 1,
+    "totalIssues": 0,
+    "totalIncidents": 0,
+    "totalEffort": 0,
+    "charts": {
+      "severity": {
+        "mandatory": 0,
+        "optional": 0,
+        "potential": 0,
+        "information": 0
+      },
+      "category": {}
+    }
+  },
+  "projects": [
+    {
+      "path": ".",
+      "issues": 0,
+      "storyPoints": 0,
+      "properties": {
+        "appName": "Sunrise-Dental-Clinic-System",
+        "jdkVersion": "17",
+        "frameworks": [
+          "Spring Boot",
+          "Spring"
+        ],
+        "languages": [
+          "Java",
+          "JavaScript"
+        ],
+        "tools": [
+          "Maven"
+        ]
+      },
+      "incidents": []
+    }
+  ],
+  "rules": {}
+}

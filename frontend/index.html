@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunrise Dental Clinic</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sunrise Dental Clinic</h1>
+            <p>Appointment and Patient Management</p>
+        </header>
+
+        <section id="home-panel" class="panel active">
+            <div class="home-hero">
+                <div class="home-copy">
+                    <span class="home-kicker">Care that starts with a smile</span>
+                    <h2>Modern dental care, beautifully organised.</h2>
+                    <p>Sunrise Dental Clinic brings appointments, patient records and billing together in one calm, simple workspace.</p>
+                    <button type="button" id="homeLoginButton" class="home-login-button">Login to your portal <span aria-hidden="true">&#8594;</span></button>
+                    <div class="home-trust-row">
+                        <span><strong>24/7</strong> access</span>
+                        <span><strong>3-in-1</strong> clinic workspace</span>
+                    </div>
+                </div>
+                <div class="home-visual" aria-label="Dental clinic workspace preview">
+                    <div class="sunrise-disc"></div>
+                    <div class="tooth-symbol" aria-hidden="true">&#9782;</div>
+                    <div class="preview-card preview-card-main">
+                        <span class="preview-label">Today's schedule</span>
+                        <strong>12 appointments</strong>
+                        <div class="preview-progress"><span></span></div>
+                        <small>Everything is on track</small>
+                    </div>
+                    <div class="preview-card preview-card-small">
+                        <span class="preview-check">&#10003;</span>
+                        <div><strong>Patient care</strong><small>Feels effortless</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-features" aria-label="Clinic features">
+                <article><span class="feature-icon">&#128197;</span><div><strong>Smart scheduling</strong><p>Keep every visit moving smoothly.</p></div></article>
+                <article><span class="feature-icon">&#128100;</span><div><strong>Patient first</strong><p>Find the details you need, fast.</p></div></article>
+                <article><span class="feature-icon">&#128176;</span><div><strong>Clear billing</strong><p>Simple records and receipts.</p></div></article>
+            </div>
+        </section>
+
+        <section id="login-panel" class="panel hidden">
+            <div class="auth-shell">
+                <div class="brand-panel">
+                    <div class="brand-badge">SDC</div>
+                    <h2>Welcome to Sunrise Dental Clinic</h2>
+                    <p>Smart appointment and patient management for a modern dental care experience.</p>
+                    <ul>
+                        <li>Appointments and scheduling</li>
+                        <li>Patient and staff records</li>
+                        <li>Billing and receipt management</li>
+                    </ul>
+                </div>
+
+                <div class="form-panel">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <label for="username">Username</label>
+                        <input id="username" name="username" type="text" placeholder="Enter username" required />
+
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="Enter password" required />
+
+                        <button type="submit">Login</button>
+                    </form>
+
+                    <div class="account-actions">
+                        <button type="button" id="showRegisterButton" class="secondary-button">Create Account</button>
+                    </div>
+
+                    <p id="loginMessage" class="message"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="register-panel" class="panel hidden">
+            <div class="auth-shell register-layout">
+                <div class="brand-panel compact-brand">
+                    <div class="brand-badge">Create</div>
+                    <h2>Join the clinic team</h2>
+                    <p>Create an account to access the dental management portal.</p>
+                </div>
+
+                <div class="form-panel">
+                    <h2>Create Account</h2>
+                    <form id="registerForm">
+                        <label for="registerFullName">Full Name</label>
+                        <input id="registerFullName" name="registerFullName" type="text" placeholder="Enter full name" required />
+
+                        <label for="registerEmail">Email</label>
+                        <input id="registerEmail" name="registerEmail" type="email" placeholder="Enter email address" required />
+
+                        <label for="registerPhoneNumber">Phone Number</label>
+                        <input id="registerPhoneNumber" name="registerPhoneNumber" type="tel" placeholder="Enter phone number" required />
+
+                        <label for="registerUsername">Username</label>
+                        <input id="registerUsername" name="registerUsername" type="text" placeholder="Choose username" required />
+
+                        <label for="registerPassword">Password</label>
+                        <input id="registerPassword" name="registerPassword" type="password" placeholder="Choose password" required />
+
+                        <label for="registerRole">Role</label>
+                        <select id="registerRole" name="registerRole" required>
+                            <option value="STAFF">Staff</option>
+                            <option value="ADMIN">Admin</option>
+                        </select>
+
+                        <button type="submit">Create Account</button>
+                    </form>
+                    <div class="account-actions">
+                        <button type="button" id="backToLoginButton" class="secondary-button">Back to Login</button>
+                    </div>
+                    <p id="registerMessage" class="message"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="appointment-panel" class="panel hidden">
+            <div id="roleDashboard" class="dashboard hidden dashboard-shell">
+                <div id="staffDashboard" class="role-panel hidden">
+                    <div class="staff-layout">
+                        <aside class="staff-sidebar">
+                            <div class="staff-brand">
+                                <div class="brand-mark">SD</div>
+                                <div>
+                                    <strong>Sunrise Dental Clinic</strong>
+                                    <span>Staff Panel</span>
+                                </div>
+                            </div>
+
+                            <nav class="staff-menu" aria-label="Staff menu">
+                                <button type="button" class="staff-nav-item active" data-action="staff-dashboard">
+                                    <span>📊</span>Dashboard
+                                </button>
+                                <button type="button" class="staff-nav-item" data-action="register-appointment">
+                                    <span>📅</span>Register Appointment
+                                </button>
+                                <button type="button" class="staff-nav-item" data-action="search-appointment">
+                                    <span>🔎</span>Search Appointment
+                                </button>
+                                <button type="button" class="staff-nav-item" data-action="patient-records">
+                                    <span>👤</span>Patient Records
+                                </button>
+                                <button type="button" class="staff-nav-item" data-action="billing">
+                                    <span>💰</span>Billing
+                                </button>
+                                <button type="button" class="staff-nav-item" data-action="help">
+                                    <span>❓</span>Help
+                                </button>
+                            </nav>
+
+                            <button type="button" class="staff-logout-btn" data-action="logout">
+                                <span>🚪</span>Logout
+                            </button>
+                        </aside>
+
+                        <main class="staff-main">
+                            <header class="staff-topbar">
+                                <div>
+                                    <p class="eyebrow">Sunrise Dental Clinic</p>
+                                    <h2>Staff Dashboard</h2>
+                                    <p class="staff-subtitle">Clinic operations and appointment management</p>
+                                </div>
+
+                                <div class="staff-user-card-wrap">
+                                    <div class="staff-user-card" id="staffUserCard">
+                                        <button type="button" class="staff-profile-trigger" id="staffProfileTrigger" aria-expanded="false" aria-controls="staffProfileMenu">
+                                            <div class="staff-avatar" id="staffUserAvatar">S</div>
+                                            <div class="staff-user-meta">
+                                                <strong id="staffUserName">Staff</strong>
+                                                <span>Role: Staff</span>
+                                            </div>
+                                        </button>
+
+                                        <button type="button" class="staff-profile-arrow-button" id="staffProfileArrowButton" aria-expanded="false" aria-controls="staffProfileMenu">
+                                            <span class="staff-profile-caret">▾</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="staff-profile-menu hidden" id="staffProfileMenu" role="menu" aria-label="Staff profile options">
+                                        <button type="button" class="staff-profile-option" data-profile-action="view">View Profile</button>
+                                        <button type="button" class="staff-profile-option" data-profile-action="edit">Edit Profile</button>
+                                        <button type="button" class="staff-profile-option" data-profile-action="photo">Change Photo</button>
+                                        <button type="button" class="staff-profile-option danger" data-profile-action="logout">Logout</button>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <section class="staff-summary-grid" aria-label="Staff summary">
+                                <article class="summary-card staff-card">
+                                    <div class="card-icon teal">📅</div>
+                                    <div class="summary-content">
+                                        <span>Today's Appointments</span>
+                                        <strong id="staffTodayAppointmentsCount">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card staff-card">
+                                    <div class="card-icon amber">⏳</div>
+                                    <div class="summary-content">
+                                        <span>Pending Appointments</span>
+                                        <strong id="staffPendingAppointmentsCount">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card staff-card">
+                                    <div class="card-icon blue">✅</div>
+                                    <div class="summary-content">
+                                        <span>Confirmed Appointments</span>
+                                        <strong id="staffConfirmedAppointmentsCount">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card staff-card">
+                                    <div class="card-icon green">✔️</div>
+                                    <div class="summary-content">
+                                        <span>Completed Appointments</span>
+                                        <strong id="staffCompletedAppointmentsCount">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card staff-card">
+                                    <div class="card-icon purple">👥</div>
+                                    <div class="summary-content">
+                                        <span>Total Patients</span>
+                                        <strong id="staffTotalPatientsCount">0</strong>
+                                    </div>
+                                </article>
+                            </section>
+
+                            <div class="staff-content-grid">
+                                <section class="staff-panel-card">
+                                    <div class="section-header">
+                                        <h3>Today's Appointments</h3>
+                                        <span class="status-pill">Today</span>
+                                    </div>
+                                    <div id="staffTodayAppointmentsList" class="mini-list"></div>
+                                </section>
+
+                                <section class="staff-panel-card">
+                                    <div class="section-header">
+                                        <h3>Recent Appointments</h3>
+                                        <span class="status-pill">Live</span>
+                                    </div>
+
+                                    <div class="table-wrap">
+                                        <table class="appointments-table staff-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Appointment No.</th>
+                                                    <th>Patient</th>
+                                                    <th>Dentist</th>
+                                                    <th>Treatment</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="staffRecentAppointmentsTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <section class="staff-panel-card">
+                                <div class="section-header">
+                                    <h3>Quick Actions</h3>
+                                </div>
+                                <div class="staff-quick-actions">
+                                    <button type="button" class="staff-quick-action" data-action="register-appointment">+ Register Appointment</button>
+                                    <button type="button" class="staff-quick-action" data-action="search-appointment">🔎 Search Appointment</button>
+                                    <button type="button" class="staff-quick-action" data-action="patient-records">👤 Patient Records</button>
+                                    <button type="button" class="staff-quick-action" data-action="billing">💰 Billing</button>
+                                    <button type="button" class="staff-quick-action" data-action="help">❓ Help</button>
+                                </div>
+                            </section>
+
+                            <section id="staffProfilePage" class="staff-profile-page hidden">
+                                <div class="staff-profile-header">
+                                    <div class="staff-profile-avatar-wrap">
+                                        <div class="staff-avatar staff-profile-avatar" id="staffProfileAvatar">S</div>
+                                        <button type="button" class="secondary-button staff-profile-photo-button" id="staffProfilePhotoButton">Change Photo</button>
+                                        <input id="staffProfilePhotoInput" type="file" accept="image/*" class="hidden" />
+                                    </div>
+
+                                    <div>
+                                        <p class="eyebrow">Profile</p>
+                                        <h3>My Profile</h3>
+                                        <p class="staff-subtitle">Update your staff details and account information.</p>
+                                    </div>
+                                </div>
+
+                                <form id="staffProfileForm" class="staff-profile-form">
+                                    <div class="staff-profile-grid">
+                                        <label>
+                                            <span>Full Name</span>
+                                            <input id="staffProfileFullName" type="text" required />
+                                        </label>
+
+                                        <label>
+                                            <span>Email</span>
+                                            <input id="staffProfileEmail" type="email" required />
+                                        </label>
+
+                                        <label>
+                                            <span>Phone Number</span>
+                                            <input id="staffProfilePhone" type="tel" required />
+                                        </label>
+
+                                        <label>
+                                            <span>Username</span>
+                                            <input id="staffProfileUsername" type="text" readonly />
+                                        </label>
+
+                                        <label>
+                                            <span>Role</span>
+                                            <input id="staffProfileRole" type="text" readonly />
+                                        </label>
+
+                                        <label>
+                                            <span>Password</span>
+                                            <input id="staffProfilePassword" type="password" required />
+                                        </label>
+                                    </div>
+
+                                    <div class="staff-profile-actions">
+                                        <button type="submit">Save Changes</button>
+                                        <button type="button" class="secondary-button" id="staffProfileCancelButton">Close</button>
+                                    </div>
+
+                                    <p id="staffProfileMessage" class="message"></p>
+                                </form>
+                            </section>
+
+                            <div id="staffActionForms" class="staff-action-forms">
+                                <div class="staff-action-panel" data-staff-panel="register-appointment">
+                                    <h3>Register New Appointment</h3>
+                                    <form id="staffAppointmentForm">
+                                        <label for="staffAppointmentNumber">Appointment Number</label>
+                                        <input id="staffAppointmentNumber" type="text" pattern="APT-[0-9]{4,}" maxlength="20" placeholder="APT-1001" required />
+
+                                        <label for="staffPatientName">Patient Name</label>
+                                        <input id="staffPatientName" type="text" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" required />
+
+                                        <label for="staffAddress">Address</label>
+                                        <input id="staffAddress" type="text" maxlength="150" required />
+
+                                        <label for="staffContactNumber">Contact Number</label>
+                                        <input id="staffContactNumber" type="tel" pattern="0[0-9]{9}" maxlength="10" placeholder="0771234567" required />
+
+                                        <label for="staffDentistName">Dentist Name</label>
+                                        <input id="staffDentistName" type="text" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" required />
+
+                                        <label for="staffTreatmentType">Treatment Type</label>
+                                        <select id="staffTreatmentType" required>
+                                            <option value="Dental Cleaning">Dental Cleaning</option>
+                                            <option value="Tooth Extraction">Tooth Extraction</option>
+                                            <option value="Dental Filling">Dental Filling</option>
+                                            <option value="Root Canal">Root Canal</option>
+                                            <option value="Dental Checkup">Dental Checkup</option>
+                                        </select>
+
+                                        <label for="staffAppointmentDate">Appointment Date</label>
+                                        <input id="staffAppointmentDate" type="date" required />
+
+                                        <label for="staffAppointmentTime">Appointment Time</label>
+                                        <input id="staffAppointmentTime" type="time" required />
+
+                                        <button type="submit">Save Appointment</button>
+                                    </form>
+                                    <p id="staffAppointmentMessage" class="message"></p>
+                                </div>
+
+                                <div class="staff-action-panel hidden" data-staff-panel="search-appointment">
+                                    <h3>Search Appointment</h3>
+                                    <form id="staffSearchForm">
+                                        <label for="staffSearchAppointmentNumber">Appointment Number</label>
+                                        <input id="staffSearchAppointmentNumber" type="text" placeholder="Enter appointment number" required />
+                                        <button type="submit">Search</button>
+                                    </form>
+                                    <p id="staffSearchMessage" class="message"></p>
+
+                                    <div id="staffAppointmentDetails" class="details-box hidden">
+                                        <h4>Appointment Details</h4>
+                                        <p><strong>Appointment Number:</strong> <span id="staffDetailAppointmentNumber"></span></p>
+                                        <p><strong>Patient Name:</strong> <span id="staffDetailPatientName"></span></p>
+                                        <p><strong>Address:</strong> <span id="staffDetailAddress"></span></p>
+                                        <p><strong>Contact Number:</strong> <span id="staffDetailContactNumber"></span></p>
+                                        <p><strong>Dentist:</strong> <span id="staffDetailDentistName"></span></p>
+                                        <p><strong>Treatment:</strong> <span id="staffDetailTreatmentType"></span></p>
+                                        <p><strong>Date:</strong> <span id="staffDetailAppointmentDate"></span></p>
+                                        <p><strong>Time:</strong> <span id="staffDetailAppointmentTime"></span></p>
+                                        <p><strong>Status:</strong> <span id="staffDetailStatus"></span></p>
+                                    </div>
+                                </div>
+
+                                <div class="staff-action-panel hidden" data-staff-panel="patient-records">
+                                    <h3>Patient Records</h3>
+                                    <div class="patient-records-summary">
+                                        <input id="staffPatientSearch" type="text" placeholder="Search patient by name or appointment number" />
+                                    </div>
+                                    <div class="table-wrap">
+                                        <table class="appointments-table staff-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Patient</th>
+                                                    <th>Contact</th>
+                                                    <th>Dentist</th>
+                                                    <th>Treatment</th>
+                                                    <th>Date</th>
+                                                    <th>History</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="staffPatientRecordsTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="staff-action-panel hidden" data-staff-panel="billing">
+                                    <h3>Billing</h3>
+                                    <form id="staffBillingForm">
+                                        <label for="staffBillingAppointmentNumber">Appointment Number</label>
+                                        <input id="staffBillingAppointmentNumber" type="text" placeholder="Enter appointment number" required />
+                                        <button type="submit">Generate Bill</button>
+                                    </form>
+
+                                    <div id="staffBillingSummary" class="details-box hidden">
+                                        <h4>Bill Summary</h4>
+                                        <p><strong>Appointment Number:</strong> <span id="staffBillAppointmentNumber"></span></p>
+                                        <p><strong>Patient Name:</strong> <span id="staffBillPatientName"></span></p>
+                                        <p><strong>Dentist:</strong> <span id="staffBillDentistName"></span></p>
+                                        <p><strong>Treatment:</strong> <span id="staffBillTreatmentType"></span></p>
+                                        <p><strong>Treatment Cost:</strong> <span id="staffBillTreatmentCost"></span></p>
+                                        <p><strong>Consultation Fee:</strong> <span id="staffBillConsultationFee"></span></p>
+                                        <p><strong>Total Amount:</strong> <span id="staffBillTotalAmount"></span></p>
+                                        <p><strong>Payment Status:</strong> <span id="staffBillPaymentStatus">Pending</span></p>
+                                    </div>
+
+                                    <div class="billing-actions">
+                                        <button id="staffGenerateReceiptButton" type="button" class="secondary-button">Generate Receipt</button>
+                                        <button id="staffPrintReceiptButton" type="button">Print Receipt</button>
+                                    </div>
+
+                                    <p id="staffBillingMessage" class="message"></p>
+                                </div>
+
+                                <div class="staff-action-panel hidden" data-staff-panel="help">
+                                    <h3>Help</h3>
+                                    <ul class="help-list">
+                                        <li>1. How to register an appointment: use the register appointment form and save patient details.</li>
+                                        <li>2. How to search an appointment: enter the appointment number in Search Appointment.</li>
+                                        <li>3. How to view patient records: open Patient Records and search by patient name or appointment number.</li>
+                                        <li>4. How to calculate a bill: use Billing and enter the appointment number to generate the total.</li>
+                                        <li>5. How to print a receipt: generate the bill and then print the receipt from the billing section.</li>
+                                        <li>6. How to logout: click the Logout button in the left sidebar or the red exit action.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+
+                <div id="adminDashboard" class="role-panel hidden">
+                    <div class="admin-layout">
+                        <aside class="admin-sidebar">
+                            <div class="sidebar-brand">
+                                <div class="brand-mark">SD</div>
+                                <div>
+                                    <strong>Sunrise Dental Clinic</strong>
+                                    <span>Admin Panel</span>
+                                </div>
+                            </div>
+
+                            <nav class="sidebar-nav" aria-label="Admin menu">
+                                <button type="button" class="nav-item active" data-action="admin-dashboard">
+                                    <span>📊</span>Dashboard
+                                </button>
+                                <button type="button" class="nav-item" data-action="manage-staff">
+                                    <span>👥</span>Manage Staff
+                                </button>
+                                <button type="button" class="nav-item" data-action="manage-dentists">
+                                    <span>🦷</span>Manage Dentists
+                                </button>
+                                <button type="button" class="nav-item" data-action="manage-treatments">
+                                    <span>🧰</span>Manage Treatments
+                                </button>
+                                <button type="button" class="nav-item" data-action="manage-appointments">
+                                    <span>📅</span>Manage Appointments
+                                </button>
+                                <button type="button" class="nav-item" data-action="patient-records">
+                                    <span>👤</span>Patient Records
+                                </button>
+                                <button type="button" class="nav-item" data-action="calculate-bill">
+                                    <span>💰</span>Billing
+                                </button>
+                                <button type="button" class="nav-item" data-action="reports">
+                                    <span>📈</span>Reports
+                                </button>
+                                <button type="button" class="nav-item" data-action="help">
+                                    <span>❓</span>Help
+                                </button>
+                                <button type="button" class="nav-item nav-logout" data-action="logout">
+                                    <span>🚪</span>Logout
+                                </button>
+                            </nav>
+                        </aside>
+
+                        <main class="admin-main">
+                            <header class="admin-topbar">
+                                <div>
+                                    <p class="admin-eyebrow">Sunrise Dental Clinic</p>
+                                    <h2>Admin Dashboard</h2>
+                                    <p class="admin-subtitle">Advanced control and clinic management</p>
+                                </div>
+
+                                <div class="admin-user-card-wrap">
+                                    <div class="admin-user-card" id="adminUserCard">
+                                        <button type="button" class="admin-profile-trigger" id="adminProfileTrigger" aria-expanded="false" aria-controls="adminProfileMenu">
+                                            <div class="admin-avatar" id="adminAvatar">A</div>
+                                            <div class="admin-user-meta">
+                                                <strong id="adminDisplayName">Admin</strong>
+                                                <span>Administrator</span>
+                                            </div>
+                                        </button>
+
+                                        <button type="button" class="admin-profile-arrow-button" id="adminProfileArrowButton" aria-expanded="false" aria-controls="adminProfileMenu">
+                                            <span class="admin-profile-caret">▾</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="admin-profile-menu hidden" id="adminProfileMenu" role="menu" aria-label="Admin profile options">
+                                        <button type="button" class="admin-profile-option" data-profile-action="view">View Profile</button>
+                                        <button type="button" class="admin-profile-option" data-profile-action="edit">Edit Profile</button>
+                                        <button type="button" class="admin-profile-option" data-profile-action="photo">Change Photo</button>
+                                        <button type="button" class="admin-profile-option danger" data-profile-action="logout">Logout</button>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <section id="adminProfilePage" class="admin-profile-page hidden">
+                                <div class="admin-profile-header">
+                                    <div class="admin-profile-avatar-wrap">
+                                        <div class="admin-avatar admin-profile-avatar" id="adminProfileAvatar">A</div>
+                                        <button type="button" class="secondary-button admin-profile-photo-button" id="adminProfilePhotoButton">Change Photo</button>
+                                        <input id="adminProfilePhotoInput" type="file" accept="image/*" class="hidden" />
+                                    </div>
+
+                                    <div>
+                                        <p class="admin-eyebrow">Profile</p>
+                                        <h3>My Profile</h3>
+                                        <p class="admin-subtitle">Update your admin details and account information.</p>
+                                    </div>
+                                </div>
+
+                                <form id="adminProfileForm" class="admin-profile-form">
+                                    <div class="admin-profile-grid">
+                                        <label>
+                                            <span>Full Name</span>
+                                            <input id="adminProfileFullName" type="text" required />
+                                        </label>
+
+                                        <label>
+                                            <span>Email</span>
+                                            <input id="adminProfileEmail" type="email" required />
+                                        </label>
+
+                                        <label>
+                                            <span>Phone Number</span>
+                                            <input id="adminProfilePhone" type="tel" required />
+                                        </label>
+
+                                        <label>
+                                            <span>Username</span>
+                                            <input id="adminProfileUsername" type="text" readonly />
+                                        </label>
+
+                                        <label>
+                                            <span>Role</span>
+                                            <input id="adminProfileRole" type="text" readonly />
+                                        </label>
+
+                                        <label>
+                                            <span>Password</span>
+                                            <input id="adminProfilePassword" type="password" required />
+                                        </label>
+                                    </div>
+
+                                    <div class="admin-profile-actions">
+                                        <button type="submit">Save Changes</button>
+                                        <button type="button" class="secondary-button" id="adminProfileCancelButton">Close</button>
+                                    </div>
+
+                                    <p id="adminProfileMessage" class="message"></p>
+                                </form>
+                            </section>
+
+                            <section class="summary-section" aria-label="Dashboard summary cards">
+                                <article class="summary-card">
+                                    <div class="card-icon teal">👥</div>
+                                    <div class="summary-content">
+                                        <span>Total Patients</span>
+                                        <strong id="adminTotalPatients">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card">
+                                    <div class="card-icon blue">📅</div>
+                                    <div class="summary-content">
+                                        <span>Total Appointments</span>
+                                        <strong id="adminTotalAppointments">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card">
+                                    <div class="card-icon violet">👤</div>
+                                    <div class="summary-content">
+                                        <span>Total Staff</span>
+                                        <strong id="adminTotalStaff">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card">
+                                    <div class="card-icon orange">🦷</div>
+                                    <div class="summary-content">
+                                        <span>Total Dentists</span>
+                                        <strong id="adminTotalDentists">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card">
+                                    <div class="card-icon green">🧰</div>
+                                    <div class="summary-content">
+                                        <span>Total Treatments</span>
+                                        <strong id="adminTotalTreatments">0</strong>
+                                    </div>
+                                </article>
+
+                                <article class="summary-card">
+                                    <div class="card-icon gold">💰</div>
+                                    <div class="summary-content">
+                                        <span>Total Revenue</span>
+                                        <strong id="adminTotalRevenue">LKR 0.00</strong>
+                                    </div>
+                                </article>
+                            </section>
+
+                            <div class="content-grid">
+                                <section class="content-card">
+                                    <div class="section-title-row">
+                                        <h3>Recent Appointments</h3>
+                                        <span class="status-pill">Live</span>
+                                    </div>
+
+                                    <div class="table-wrap">
+                                        <table class="appointments-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Appointment Number</th>
+                                                    <th>Patient Name</th>
+                                                    <th>Dentist</th>
+                                                    <th>Treatment</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recentAppointmentsTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                </section>
+
+                                <section class="content-card">
+                                    <div class="section-title-row">
+                                        <h3>Appointment Status Summary</h3>
+                                    </div>
+
+                                    <div class="status-summary-grid">
+                                        <div class="status-summary-item pending">
+                                            <span>Pending</span>
+                                            <strong id="statusPending">0</strong>
+                                        </div>
+                                        <div class="status-summary-item confirmed">
+                                            <span>Confirmed</span>
+                                            <strong id="statusConfirmed">0</strong>
+                                        </div>
+                                        <div class="status-summary-item completed">
+                                            <span>Completed</span>
+                                            <strong id="statusCompleted">0</strong>
+                                        </div>
+                                        <div class="status-summary-item cancelled">
+                                            <span>Cancelled</span>
+                                            <strong id="statusCancelled">0</strong>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <section class="content-card quick-actions-card">
+                                <div class="section-title-row">
+                                    <h3>Quick Actions</h3>
+                                </div>
+
+                                <div class="quick-actions-grid">
+                                    <button type="button" class="quick-action" data-action="manage-staff">+ Add Staff</button>
+                                    <button type="button" class="quick-action" data-action="manage-dentists">+ Add Dentist</button>
+                                    <button type="button" class="quick-action" data-action="manage-treatments">+ Add Treatment</button>
+                                    <button type="button" class="quick-action" data-action="manage-appointments">Manage Appointments</button>
+                                    <button type="button" class="quick-action" data-action="patient-records">View Patients</button>
+                                    <button type="button" class="quick-action" data-action="calculate-bill">Billing</button>
+                                    <button type="button" class="quick-action" data-action="reports">Reports</button>
+                                </div>
+                            </section>
+                        </main>
+                    </div>
+
+                    <div id="adminActionForms" class="admin-action-forms hidden">
+                        <div class="admin-action-panel" data-admin-panel="staff-management">
+                            <h2>Manage Staff / Users</h2>
+
+                            <div class="staff-management-actions">
+                                <button type="button" class="secondary-button staff-management-toggle" data-staff-action="add">Add Staff</button>
+                                <button type="button" class="secondary-button staff-management-toggle" data-staff-action="edit">Edit Staff</button>
+                                <button type="button" class="secondary-button staff-management-toggle" data-staff-action="delete">Delete Staff</button>
+                                <button type="button" class="secondary-button staff-management-toggle" data-staff-action="view">View Staff</button>
+                            </div>
+
+                            <form id="staffManagementForm" class="staff-management-form">
+                                <input id="staffManagementMode" type="hidden" value="add" />
+                                <label for="staffManagementFullName">Full Name</label>
+                                <input id="staffManagementFullName" type="text" placeholder="Enter full name" required />
+
+                                <label for="staffManagementEmail">Email</label>
+                                <input id="staffManagementEmail" type="email" placeholder="Enter email" required />
+
+                                <label for="staffManagementPhone">Phone Number</label>
+                                <input id="staffManagementPhone" type="tel" placeholder="Enter phone number" required />
+
+                                <label for="staffManagementUsername">Username</label>
+                                <input id="staffManagementUsername" type="text" placeholder="Enter username" required />
+
+                                <label for="staffManagementPassword">Password</label>
+                                <input id="staffManagementPassword" type="password" placeholder="Enter password" required />
+
+                                <label for="staffManagementRole">Role</label>
+                                <select id="staffManagementRole" required>
+                                    <option value="STAFF">Staff</option>
+                                    <option value="ADMIN">Admin</option>
+                                </select>
+
+                                <div class="staff-management-form-actions">
+                                    <button type="submit">Save Staff</button>
+                                    <button type="button" class="secondary-button" id="staffManagementResetButton">Reset</button>
+                                </div>
+                            </form>
+
+                            <div class="staff-management-table-wrap">
+                                <table class="appointments-table staff-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Role</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="staffManagementTableBody"></tbody>
+                                </table>
+                            </div>
+
+                            <p id="staffManagementMessage" class="message"></p>
+                        </div>
+
+                        <div class="admin-action-panel" data-admin-panel="appointment-form">
+                            <h2>Register Appointment</h2>
+                            <form id="appointmentForm">
+                                <label for="appointmentNumber">Appointment Number</label>
+                                <input id="appointmentNumber" type="text" pattern="APT-[0-9]{4,}" maxlength="20" placeholder="APT-1001" required />
+
+                                <label for="patientName">Patient Name</label>
+                                <input id="patientName" type="text" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" required />
+
+                                <label for="address">Address</label>
+                                <input id="address" type="text" maxlength="150" required />
+
+                                <label for="contactNumber">Contact Number</label>
+                                <input id="contactNumber" type="tel" pattern="0[0-9]{9}" maxlength="10" placeholder="0771234567" required />
+
+                                <label for="dentistName">Dentist Name</label>
+                                <input id="dentistName" type="text" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" required />
+
+                                <label for="treatmentType">Treatment Type</label>
+                                <select id="treatmentType" required>
+                                    <option value="Dental Cleaning">Dental Cleaning</option>
+                                    <option value="Tooth Extraction">Tooth Extraction</option>
+                                    <option value="Dental Filling">Dental Filling</option>
+                                    <option value="Root Canal">Root Canal</option>
+                                    <option value="Dental Checkup">Dental Checkup</option>
+                                </select>
+
+                                <label for="appointmentDate">Appointment Date</label>
+                                <input id="appointmentDate" type="date" required />
+
+                                <label for="appointmentTime">Appointment Time</label>
+                                <input id="appointmentTime" type="time" required />
+
+                                <button type="submit">Save Appointment</button>
+                            </form>
+                            <p id="appointmentMessage" class="message"></p>
+                        </div>
+
+                        <div class="admin-action-panel hidden" data-admin-panel="manage-appointments">
+                            <h2>Manage Appointments</h2>
+                            
+                            <div class="table-wrap">
+                                <table class="appointments-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Appointment Number</th>
+                                            <th>Patient Name</th>
+                                            <th>Dentist</th>
+                                            <th>Treatment</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="manageAppointmentsTableBody"></tbody>
+                                </table>
+                            </div>
+
+                            <p id="manageAppointmentsMessage" class="message"></p>
+                        </div>
+
+                        <div class="admin-action-panel hidden" data-admin-panel="search-form">
+                            <h2>Search Appointment</h2>
+                            <form id="searchForm">
+                                <label for="searchAppointmentNumber">Appointment Number</label>
+                                <input id="searchAppointmentNumber" type="text" placeholder="Enter appointment number" required />
+                                <button type="submit">Search</button>
+                            </form>
+                            <p id="searchMessage" class="message"></p>
+
+                            <div id="appointmentDetails" class="details-box hidden">
+                                <h3>Appointment Details</h3>
+                                <p><strong>Appointment Number:</strong> <span id="detailAppointmentNumber"></span></p>
+                                <p><strong>Patient Name:</strong> <span id="detailPatientName"></span></p>
+                                <p><strong>Address:</strong> <span id="detailAddress"></span></p>
+                                <p><strong>Contact Number:</strong> <span id="detailContactNumber"></span></p>
+                                <p><strong>Dentist:</strong> <span id="detailDentistName"></span></p>
+                                <p><strong>Treatment:</strong> <span id="detailTreatmentType"></span></p>
+                                <p><strong>Date:</strong> <span id="detailAppointmentDate"></span></p>
+                                <p><strong>Time:</strong> <span id="detailAppointmentTime"></span></p>
+                            </div>
+                        </div>
+
+                        <div class="admin-action-panel hidden" data-admin-panel="reports-panel">
+                            <section id="reportsPanel" class="reports-panel">
+                                <h2>Reports</h2>
+
+                                <div class="report-actions">
+                                    <button type="button" class="primary-button report-button" data-report-type="appointments">Appointment Report</button>
+                                    <button type="button" class="secondary-button report-button" data-report-type="patients">Patient Report</button>
+                                    <button type="button" class="secondary-button report-button" data-report-type="billing">Billing / Revenue Report</button>
+                                </div>
+
+                                <div id="reportContent" class="details-box">
+                                    <h3 id="reportTitle">Select a report</h3>
+                                    <div id="reportTableContainer">
+                                        <p class="empty-report-state">Choose a report type to view clinic data.</p>
+                                    </div>
+                                </div>
+
+                                <p id="reportMessage" class="message"></p>
+                            </section>
+                        </div>
+
+                        <div class="admin-action-panel hidden" data-admin-panel="billing-section">
+                            <section id="billingSection" class="billing-section">
+                                <h2>Billing and Receipt</h2>
+                                <form id="billingForm">
+                                    <label for="billingAppointmentNumber">Appointment Number</label>
+                                    <input id="billingAppointmentNumber" type="text" placeholder="Enter appointment number" required />
+                                    <button type="button" id="billingSubmitButton">Generate Bill</button>
+                                </form>
+
+                                <div id="billingSummary" class="details-box hidden">
+                                    <h3>Bill Summary</h3>
+                                    <p><strong>Appointment Number:</strong> <span id="billAppointmentNumber"></span></p>
+                                    <p><strong>Patient Name:</strong> <span id="billPatientName"></span></p>
+                                    <p><strong>Dentist Name:</strong> <span id="billDentistName"></span></p>
+                                    <p><strong>Treatment Type:</strong> <span id="billTreatmentType"></span></p>
+                                    <p><strong>Treatment Cost:</strong> <span id="billTreatmentCost"></span></p>
+                                    <p><strong>Consultation Fee:</strong> <span id="billConsultationFee"></span></p>
+                                    <p><strong>Total Amount:</strong> <span id="billTotalAmount"></span></p>
+                                    <p><strong>Receipt Number:</strong> <span id="billReceiptNumber"></span></p>
+                                </div>
+
+                                <div class="billing-actions">
+                                    <button id="generateReceiptButton" type="button" class="secondary-button">Generate Receipt</button>
+                                    <button id="printReceiptButton" type="button">Print Receipt</button>
+                                </div>
+
+                                <p id="billingMessage" class="message"></p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="exitButton" class="exit-button" type="button">Safe Exit</button>
+
+            <!-- View Appointment Modal -->
+            <div id="viewAppointmentModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>View Appointment</h3>
+                        <button type="button" class="modal-close" data-modal-close="viewAppointmentModal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="viewAppointmentDetails">
+                            <p><strong>Appointment Number:</strong> <span id="viewAppointmentNumber"></span></p>
+                            <p><strong>Patient Name:</strong> <span id="viewPatientName"></span></p>
+                            <p><strong>Address:</strong> <span id="viewAddress"></span></p>
+                            <p><strong>Contact Number:</strong> <span id="viewContactNumber"></span></p>
+                            <p><strong>Dentist:</strong> <span id="viewDentistName"></span></p>
+                            <p><strong>Treatment:</strong> <span id="viewTreatmentType"></span></p>
+                            <p><strong>Date:</strong> <span id="viewAppointmentDate"></span></p>
+                            <p><strong>Time:</strong> <span id="viewAppointmentTime"></span></p>
+                            <p><strong>Status:</strong> <span id="viewStatus"></span></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="secondary-button" data-modal-close="viewAppointmentModal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update Appointment Modal -->
+            <div id="updateAppointmentModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Update Appointment</h3>
+                        <button type="button" class="modal-close" data-modal-close="updateAppointmentModal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateAppointmentForm">
+                            <input id="updateAppointmentNumber" type="hidden" />
+                            
+                            <label for="updatePatientName">Patient Name</label>
+                            <input id="updatePatientName" type="text" required />
+
+                            <label for="updateAddress">Address</label>
+                            <input id="updateAddress" type="text" required />
+
+                            <label for="updateContactNumber">Contact Number</label>
+                            <input id="updateContactNumber" type="text" required />
+
+                            <label for="updateDentistName">Dentist Name</label>
+                            <input id="updateDentistName" type="text" required />
+
+                            <label for="updateTreatmentType">Treatment Type</label>
+                            <select id="updateTreatmentType" required>
+                                <option value="Dental Cleaning">Dental Cleaning</option>
+                                <option value="Tooth Extraction">Tooth Extraction</option>
+                                <option value="Dental Filling">Dental Filling</option>
+                                <option value="Root Canal">Root Canal</option>
+                                <option value="Dental Checkup">Dental Checkup</option>
+                            </select>
+
+                            <label for="updateAppointmentDate">Appointment Date</label>
+                            <input id="updateAppointmentDate" type="date" required />
+
+                            <label for="updateAppointmentTime">Appointment Time</label>
+                            <input id="updateAppointmentTime" type="time" required />
+
+                            <label for="updateStatus">Status</label>
+                            <select id="updateStatus" required>
+                                <option value="Pending">Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </form>
+                        <p id="updateAppointmentMessage" class="message"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="secondary-button" data-modal-close="updateAppointmentModal">Cancel</button>
+                        <button type="button" id="updateAppointmentSubmitButton">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
